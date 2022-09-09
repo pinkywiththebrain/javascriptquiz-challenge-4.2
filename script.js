@@ -81,15 +81,15 @@ function checkAnswer(event) {
 
 function saveScores() {
 
-var initials = inputEl.value 
-console.log(initials)
-var scores = JSON.parse(localStorage.getItem("scores")) || []
+    var initials = inputEl.value 
+    console.log(initials)
+    var scores = JSON.parse(localStorage.getItem("scores")) || []
 
-scores.push({score:counter, name:initials})
+    scores.push({score:counter, name:initials})
 
-localStorage.setItem("scores", JSON.stringify(scores))
+    localStorage.setItem("scores", JSON.stringify(scores))
 
-window.location.reload()
+    window.location.reload()
 
 }
 
