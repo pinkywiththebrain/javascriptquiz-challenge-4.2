@@ -33,24 +33,24 @@ var myQuestions = [{
 },
 ];
 
-// var index = 0
-// var counter
-// var timer
+var index = 0
+var counter
+var timer
 
-// function getQuestion() {
+function getQuestion() {
 
-//     questionEl.textContent = myQuestions[index].question;
-//     answerEl.innerHTML = ""
+    questionEl.textContent = myQuestions[index].question;
+    answerEl.innerHTML = ""
 
-//     for (i = 0; i < myQuestions[index].answers.length; i++) {
-//        var button = document.createElement("button") 
-//        button.addEventListener("click", checkAnswer)
-//        button.innerText = myQuestions[index].answers[i]
-//        answerEl.appendChild(button)
-//     }
+    for (i = 0; i < myQuestions[index].answers.length; i++) {
+       var button = document.createElement("button") 
+       button.addEventListener("click", checkAnswer)
+       button.innerText = myQuestions[index].answers[i]
+       answerEl.appendChild(button)
+    }
     
 
-// }
+}
 
 // function checkAnswer(event) {
 
