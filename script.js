@@ -52,32 +52,32 @@ function getQuestion() {
 
 }
 
-// function checkAnswer(event) {
+function checkAnswer(event) {
 
-//     if (index === myQuestions.length - 1) {
-//         answerEl.style.display = "none"
-//         questionEl.style.display = "none"
-//         clearInterval(timer)
-//         initialsEl.style.display="block"
-//         buttonEl.addEventListener("click", saveScores)
-//         return
-//     }
+    if (index === myQuestions.length - 1) {
+        answerEl.style.display = "none"
+        questionEl.style.display = "none"
+        clearInterval(timer)
+        initialsEl.style.display="block"
+        buttonEl.addEventListener("click", saveScores)
+        return
+    }
 
-//     var choice = event.target.innerText
-//     console.log(choice)
+    var choice = event.target.innerText
+    console.log(choice)
 
-//     if (choice === myQuestions[index].correctAnswer) {
-//         index = index + 1
-//         getQuestion()
-//     } else {
-//         counter = counter - 5
-//         index = index + 1
-//         getQuestion()
-//     }
+    if (choice === myQuestions[index].correctAnswer) {
+        index = index + 1
+        getQuestion()
+    } else {
+        counter = counter - 5
+        index = index + 1
+        getQuestion()
+    }
 
 
 
-// }
+}
 
 // function saveScores() {
 
