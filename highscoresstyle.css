@@ -26,6 +26,10 @@ body {
     color: transparent;
 }
 
+h1 {
+    font-family: Courier;
+}
+
 a {
     margin-top: 10px;
     text-decoration: none;
