@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace;
+    line-height: 1.5;
+    background-color: #363034;
+}
+
+.container {
+    background-color: rgb(255, 246, 196);
+    border-style: solid;
+    border-radius: 15px;
+    width: 50%;
+    margin: 20% 25%;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.rainbow-text {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
+}
+
+a {
+    margin-top: 10px;
+    text-decoration: none;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: aquamarine;
+}

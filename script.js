@@ -1,11 +1,14 @@
+//variables linking to the HTML elements that will be used
 var timerEl = document.getElementById("timer")
 var startBtnEl = document.getElementById("startBtn")
+var startMsgEl = document.getElementById("startMsg")
 var questionEl = document.getElementById("question")
 var answerEl = document.getElementById("answer")
 var initialsEl = document.getElementById("highscores")
 var inputEl = document.getElementById("scoreInitials")
 var buttonEl = document.getElementById("scoreBtn")
 
+//the questions, answers, and correct answers in the form of an object
 var myQuestions = [{
     question: 'Which of the following is NOT a primitive data type?',
     answers: ['number', 'boolean', 'class', 'string'],
@@ -33,15 +36,17 @@ var myQuestions = [{
 },
 ];
 
+//global variables we will need in multiple functions
 var index = 0
 var counter
 var timer
 
+//function that grabs each question and corresponding answers
 function getQuestion() {
-
+    //displays each question
     questionEl.textContent = myQuestions[index].question;
     answerEl.innerHTML = ""
-
+    //for loop grabs each answer for each question
     for (i = 0; i < myQuestions[index].answers.length; i++) {
        var button = document.createElement("button") 
        button.addEventListener("click", checkAnswer)
@@ -52,8 +57,9 @@ function getQuestion() {
 
 }
 
+//function logs users choices and compares them to the correct answers
 function checkAnswer(event) {
-
+    //if statement for when the user gets to the end of the quiz; timer stops, and the space to log initials amd score appears
     if (index === myQuestions.length - 1) {
         answerEl.style.display = "none"
         questionEl.style.display = "none"
@@ -65,7 +71,7 @@ function checkAnswer(event) {
 
     var choice = event.target.innerText
     console.log(choice)
-
+    // if/else statement to check if answers are correct. if correct it displays the next question, if wrong it deducts 5 seconds and displays the next question.
     if (choice === myQuestions[index].correctAnswer) {
         index = index + 1
         getQuestion()
@@ -79,6 +85,7 @@ function checkAnswer(event) {
 
 }
 
+//function to save scores to local storage;
 function saveScores() {
 
     var initials = inputEl.value 
@@ -93,16 +100,19 @@ function saveScores() {
 
 }
 
-
+//initiates game and starts timer
 function startGame() {
+
+    startMsgEl.style.display = "none"
     startBtnEl.style.display = "none"
 
     getQuestion()
 
     startTimer()
+
 }
 
-
+//timer function
 function startTimer() {
     counter = 60;
     timerEl.textContent = counter + (" seconds left");
@@ -113,8 +123,9 @@ function startTimer() {
 
         if (counter === 0) {
             timerEl.textContent = ("TIME'S UP");
+            answerEl.style.display = "none"
+            questionEl.style.display = "none"
             clearInterval(timer);
-            gameStart = false;
         }
         
     }, 1000);

@@ -8,21 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="./highscores.html">View Highscores</a>
-    
-    <div class="timer"><span id="timer"></span></div>
+    <div class="container">
+       
+        <div class="flexrow">
+        <a href="./highscores.html">View Highscores</a>
+        
+        <div class="timer"><span id="timer"></span></div>
+        </div>
 
-    <div><button id="startBtn">Start</button></div>
+        <div class="start">
+            <h3 id="startMsg">Ready to test your Javascript knowledge? <br> Click "Start" to begin!</h3>
+            <button id="startBtn">Start</button>
+        </div>
 
-    <div id="question"></div>
-    <ul id="answer">
-    </ul>
-    <div id="highscores">
-        <p id="score"></p>
-        <input id="scoreInitials">
-        <button id="scoreBtn">Save Initials</button>
+        <div class="questionContainer">
+        <div id="question"></div>
+        <ul id="answer">
+        </ul>
+        </div>
+
+        <div id="highscores">
+            <p id="score"></p>
+            <input id="scoreInitials">
+            <button id="scoreBtn">Save Initials</button>
+        </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
