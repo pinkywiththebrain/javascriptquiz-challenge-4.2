@@ -8,32 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Quiz Container -->
     <div class="container">
-       
+       <!-- Top row -->
         <div class="flexrow">
         <a href="./highscores.html">View Highscores</a>
         
         <div class="timer"><span id="timer"></span></div>
         </div>
-
+        <!-- Start Message -->
         <div class="start">
             <h3 id="startMsg">Ready to test your Javascript knowledge? <br> Click "Start" to begin!</h3>
             <button id="startBtn">Start</button>
         </div>
-
+        <!-- Quiz Container -->
         <div class="questionContainer">
         <div id="question"></div>
         <ul id="answer">
         </ul>
         </div>
-
+        <!-- Score Container -->
         <div id="highscores">
             <p id="score"></p>
             <input id="scoreInitials">
             <button id="scoreBtn">Save Initials</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

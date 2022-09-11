@@ -66,7 +66,7 @@ function checkAnswer(event) {
         answerEl.style.display = "none"
         questionEl.style.display = "none"
         clearInterval(timer)
-        scoreEl.textContent = ("Your final score is ") + totalScore;
+        scoreEl.textContent = ("Your final score is ") + totalScore + ("%");
         initialsEl.style.display="block"
         buttonEl.addEventListener("click", saveScores)
         return
