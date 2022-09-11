@@ -5,6 +5,7 @@ var startMsgEl = document.getElementById("startMsg")
 var questionEl = document.getElementById("question")
 var answerEl = document.getElementById("answer")
 var initialsEl = document.getElementById("highscores")
+var scoreEl = document.getElementById("score")
 var inputEl = document.getElementById("scoreInitials")
 var buttonEl = document.getElementById("scoreBtn")
 
@@ -40,6 +41,7 @@ var myQuestions = [{
 var index = 0
 var counter
 var timer
+var totalScore = 100
 
 //function that grabs each question and corresponding answers
 function getQuestion() {
@@ -64,6 +66,7 @@ function checkAnswer(event) {
         answerEl.style.display = "none"
         questionEl.style.display = "none"
         clearInterval(timer)
+        scoreEl.textContent = ("Your final score is ") + totalScore;
         initialsEl.style.display="block"
         buttonEl.addEventListener("click", saveScores)
         return
@@ -77,11 +80,10 @@ function checkAnswer(event) {
         getQuestion()
     } else {
         counter = counter - 5
+        totalScore = totalScore - 20
         index = index + 1
         getQuestion()
     }
-
-
 
 }
 
@@ -92,7 +94,7 @@ function saveScores() {
     console.log(initials)
     var scores = JSON.parse(localStorage.getItem("scores")) || []
 
-    scores.push({score:counter, name:initials})
+    scores.push({score:totalScore, name:initials})
 
     localStorage.setItem("scores", JSON.stringify(scores))
 
