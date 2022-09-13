@@ -61,8 +61,21 @@ function getQuestion() {
 
 //function logs users choices and compares them to the correct answers
 function checkAnswer(event) {
-    //if statement for when the user gets to the end of the quiz; timer stops, and the space to log initials amd score appears
-    if (index === myQuestions.length - 1) {
+    var choice = event.target.innerText
+    console.log(choice)
+    
+    // if statement to check if answers are correct. if correct it displays the next question, if wrong it deducts 5 seconds and displays the next question.
+    
+    if (choice !== myQuestions[index].correctAnswer ) {
+        counter = counter - 5
+        totalScore = totalScore - 20
+    }
+
+    index++;
+
+    //if statement for when the user gets to the end of the quiz; timer stops, and the space to log initials and score appears
+
+    if (index === myQuestions.length) {
         answerEl.style.display = "none"
         questionEl.style.display = "none"
         clearInterval(timer)
@@ -72,18 +85,8 @@ function checkAnswer(event) {
         return
     }
 
-    var choice = event.target.innerText
-    console.log(choice)
-    // if/else statement to check if answers are correct. if correct it displays the next question, if wrong it deducts 5 seconds and displays the next question.
-    if (choice === myQuestions[index].correctAnswer) {
-        index = index + 1
-        getQuestion()
-    } else {
-        counter = counter - 5
-        totalScore = totalScore - 20
-        index = index + 1
-        getQuestion()
-    }
+    getQuestion()
+
 
 }
 
